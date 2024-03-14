@@ -29,7 +29,7 @@
 <h1>Hello World!</h1>
 <p>I will do my best to study JSP</p >
 <p>
-  <a href="https://github.com">go to github</a>
+  <a href="https://www.ecjtu.edu.cn">go to ecjtu</a>
 </p >
 </body>
 </html>
