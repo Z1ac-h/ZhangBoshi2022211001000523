@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="userdb@localhost">
+  <database-model serializer="dbm" dbms="MSSQL" family-id="MSSQL" format-version="4.19">
+    <root id="1">
+      <ServerVersion>15.0.2104</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="Book_Reader_DB">
+      <ObjectId>5</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="3" parent="1" name="HIS_DB">
+      <ObjectId>7</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="4" parent="1" name="Library_DB">
+      <ObjectId>6</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="5" parent="1" name="master">
+      <ObjectId>1</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="6" parent="1" name="model">
+      <ObjectId>3</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="7" parent="1" name="msdb">
+      <ObjectId>4</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="8" parent="1" name="tempdb">
+      <ObjectId>2</ObjectId>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+    </database>
+    <database id="9" parent="1" name="userdb">
+      <ObjectId>8</ObjectId>
+      <Current>1</Current>
+      <Collation>Chinese_PRC_CI_AS</Collation>
+      <Fingerprint>8.45366/041381D8-9FE9-4FA7-B47A-2439863481F2@LAPTOP-96RN61JI</Fingerprint>
+    </database>
+    <schema id="10" parent="9" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+    </schema>
+    <schema id="11" parent="9" name="db_accessadmin">
+      <ObjectId>16385</ObjectId>
+    </schema>
+    <schema id="12" parent="9" name="db_backupoperator">
+      <ObjectId>16389</ObjectId>
+    </schema>
+    <schema id="13" parent="9" name="db_datareader">
+      <ObjectId>16390</ObjectId>
+    </schema>
+    <schema id="14" parent="9" name="db_datawriter">
+      <ObjectId>16391</ObjectId>
+    </schema>
+    <schema id="15" parent="9" name="db_ddladmin">
+      <ObjectId>16387</ObjectId>
+    </schema>
+    <schema id="16" parent="9" name="db_denydatareader">
+      <ObjectId>16392</ObjectId>
+    </schema>
+    <schema id="17" parent="9" name="db_denydatawriter">
+      <ObjectId>16393</ObjectId>
+    </schema>
+    <schema id="18" parent="9" name="db_owner">
+      <ObjectId>16384</ObjectId>
+    </schema>
+    <schema id="19" parent="9" name="db_securityadmin">
+      <ObjectId>16386</ObjectId>
+    </schema>
+    <schema id="20" parent="9" name="dbo">
+      <ObjectId>1</ObjectId>
+      <IntrospectionTimestamp>2024-03-27.01:35:06.960</IntrospectionTimestamp>
+      <Current>1</Current>
+    </schema>
+    <schema id="21" parent="9" name="guest">
+      <ObjectId>2</ObjectId>
+    </schema>
+    <schema id="22" parent="9" name="sys">
+      <ObjectId>4</ObjectId>
+    </schema>
+    <table id="23" parent="20" name="Usertable">
+      <ObjectId>581577110</ObjectId>
+      <CreatedTimestamp>2024-03-17.05:03:08.370</CreatedTimestamp>
+      <ModifiedTimestamp>2024-03-17.05:16:11.350</ModifiedTimestamp>
+    </table>
+    <column id="24" parent="23" name="Username">
+      <Position>1</Position>
+      <DataType>nchar(16 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="23" name="Password">
+      <Position>2</Position>
+      <DataType>nchar(12 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="23" name="Email">
+      <Position>3</Position>
+      <DataType>nchar(20 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="23" name="Gender">
+      <Position>4</Position>
+      <DataType>char(2 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="23" name="Birthdate">
+      <Position>5</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <check id="29" parent="23" name="Genderlimit">
+      <ObjectId>613577224</ObjectId>
+      <CreatedTimestamp>2024-03-17.05:16:11.347</CreatedTimestamp>
+      <ModifiedTimestamp>2024-03-17.05:16:11.347</ModifiedTimestamp>
+      <ColNames>Gender</ColNames>
+      <Predicate>[Gender]=&apos;female&apos; OR [Gender]=&apos;male&apos;</Predicate>
+    </check>
+  </database-model>
+</dataSource>

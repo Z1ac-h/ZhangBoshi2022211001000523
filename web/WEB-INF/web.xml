@@ -13,6 +13,7 @@
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
+<!--
     <servlet>
         <servlet-name>work03register</servlet-name>
         <servlet-class>com.ZhangBoshi.week3.demo.RegisterServlet</servlet-class>
@@ -21,6 +22,7 @@
         <servlet-name>work03register</servlet-name>
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
+-->
 
     <servlet>
         <servlet-name>work03</servlet-name>
@@ -31,4 +33,54 @@
         <url-pattern>/life</url-pattern>
     </servlet-mapping>
 
+
+
+
+    <servlet>
+    <servlet-name>ConfigDemoServlet</servlet-name>
+    <servlet-class>com.ZhangBoshi.week4.Homework.ConfigDemoServlet</servlet-class>
+    <init-param>
+        <param-name>name1</param-name>
+        <param-value>Zhang Boshi</param-value>
+    </init-param>
+    <init-param>
+        <param-name>studentId1</param-name>
+        <param-value>2022211001000523</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConfigDemoServlet</servlet-name>
+        <url-pattern>/config</url-pattern>
+    </servlet-mapping>
+
+
+    <context-param>
+        <param-name>driver</param-name>
+        <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:sqlserver://localhost:1433;databaseName=userdb;</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>sa</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>password</param-name>
+        <param-value><![CDATA[@10%10/1-+0#$2*&4]]></param-value>
+    </context-param>
+
+
+
+
+
+
+
 </web-app>
+
+
