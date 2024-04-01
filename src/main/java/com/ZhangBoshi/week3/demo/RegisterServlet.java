@@ -34,7 +34,7 @@ public class RegisterServlet extends HttpServlet {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
-        System.out.println("--> !ConnectionID"+conn);
+        System.out.println("Register-->   ConnectionID"+conn);
 
     }
 

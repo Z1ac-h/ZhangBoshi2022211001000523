@@ -1,15 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
   User: 1234e's'z'x'c'v
-  Date: 2024/3/16
-  Time: 23:54
+  Date: 2024/3/30
+  Time: 20:17
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <head>
     <meta charset="UTF-8">
-    <title>JSPWebWeek2Homework2</title>
+    <title>JSPWeb-Week5Homework</title>
     <style>
         * {
             padding: 0;
@@ -24,11 +24,11 @@
         }
 
         #header-container {
-            flex: 0 0 auto; /* header不随内容伸缩，始终保持固定大小 */
+            flex: 0 0 auto;
         }
 
         #footer-container {
-            flex: 0 0 auto; /* footer不随内容伸缩，始终保持固定大小 */
+            flex: 0 0 auto;
         }
 
         #container1 {
@@ -44,9 +44,6 @@
             margin-bottom: 10px;
         }
 
-        .r-gender {
-            margin-bottom: 10px;
-        }
 
         input[type="radio"] {
             margin-right: 5px;
@@ -75,7 +72,7 @@
 </div>
 
 <div id="container1">
-    <form id="register" method="post" action="${pageContext.request.contextPath}/register">
+    <form id="register" method="post" action="${pageContext.request.contextPath}/login">
 
         <div class="r-input">
             <label >Username</label><br>
@@ -88,25 +85,7 @@
         </div>
 
         <div class="r-input">
-            <label >Email</label><br>
-            <input Type="text" name="Email"><br>
-        </div>
-
-        <div class="r-gender">
-            <label >Gender</label><br>
-            <input  type="radio" name="Gender" value="male"/><label>male</label>
-            <input  type="radio" name="Gender" value="female"/><label>female</label>
-        </div>
-
-        <div class="r-input">
-            <label >Birthdate</label><br>
-            <input Type="text" name="Birthdate"
-                   pattern="\d{4}-\d{2}-\d{2}"
-                   title="请输入格式为YYYY-MM-DD的生日，例如：1999-01-01"><br>
-        </div>
-
-        <div class="r-input">
-            <input Type="submit" id="submit" value="Click Here Submit"><br>
+            <input Type="submit" id="submit" value="Login"><br>
         </div>
     </form>
 </div>
@@ -117,4 +96,3 @@
 
 
 </body>
-

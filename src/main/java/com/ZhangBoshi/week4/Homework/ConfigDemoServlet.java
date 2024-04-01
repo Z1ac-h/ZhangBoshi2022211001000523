@@ -14,12 +14,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-@WebServlet(name="ConfigDemoServlet"
+@WebServlet(name="ConfigDemoServlet"//,
         //urlPatterns = {"/config"},
         //initParams = {
         //@WebInitParam(name="name1",value = "Zhang Boshi"),
         //@WebInitParam(name="studentId1",value = "2022211001000523"),
-        // @WebInitParam(name="name2",value = "Zhang Boshi ()"),
+        //@WebInitParam(name="name2",value = "Zhang Boshi ()"),
         //@WebInitParam(name="studentId2",value = "2022211001000523 ()")
         //},loadOnStartup = 1
 )
@@ -43,8 +43,8 @@ public class ConfigDemoServlet extends HttpServlet {
         ServletConfig config=getServletConfig();
         String name=config.getInitParameter("name1");
         String studentId=config.getInitParameter("studentId1");
-        //String Name=config.getInitParameter("name2");
-        //String StudentId=config.getInitParameter("studentId2");
+        String Name=config.getInitParameter("name2");
+        String StudentId=config.getInitParameter("studentId2");
 
 
 
@@ -54,13 +54,13 @@ public class ConfigDemoServlet extends HttpServlet {
         PrintWriter writer = response.getWriter();
         writer.println("<html><head><title>Exercise#1</title></head><body>");
         writer.println("<p style='font-size: 24px; font-weight: bold;'>");
-        writer.println("Task1-Get init parameters from web.xml");
+        writer.println("Task1 web.xml");
         writer.println("</p>");
         writer.println("<p>name :" + name + "</p>");
         writer.println("<p>studentId :" + studentId + "</p>");
 
         //writer.println("<p style='font-size: 24px; font-weight: bold;'>");
-        //writer.println("Task2-Get init parameters from @WebServlet");
+        //writer.println("Task2 @WebServlet");
         //writer.println("</p>");
         //writer.println("<p>Name :" + Name + "</p>");
         //writer.println("<p>StudentId :" + StudentId + "</p>");
