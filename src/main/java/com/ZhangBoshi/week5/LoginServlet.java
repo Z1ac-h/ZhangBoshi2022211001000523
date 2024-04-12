@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
+import java.util.*;
 import java.util.Date;
 
 
@@ -57,15 +58,33 @@ public class LoginServlet extends HttpServlet {
 
             if (rs.next()) {
 
-                response.setContentType("text/html");
-                out.println("<html><head><title>Login result</title></head><body>");
+                    //request.setAttribute("id",rs.getInt("id"));
+                    request.setAttribute("Username",rs.getString("Username"));
+                    request.setAttribute("Password",rs.getString("Password"));
+                    request.setAttribute("Email",rs.getString("Email"));
+                    request.setAttribute("Gender",rs.getString("Gender"));
+                    request.setAttribute("Birthdate",rs.getString("Birthdate"));
+                try {
+                    request.getRequestDispatcher("userinfo.jsp").forward(request,response);
+                } catch (ServletException e) {
+                    e.printStackTrace();
+                }
+
+                /*response.setContentType("text/html");
+                out.println("<html><head><title>login result</title></head><body>");
                 out.println("<br><b>Login Success!!!</b>");
                 out.println("<br><b>Welcome, "+Username+"</b>");
-                out.println("</body></html>");
+                out.println("</body></html>");*/
             } else {
-                response.setContentType("text/html");
-                out.println("<br><b>Username or Password Error!!!</b>");
-                out.println("</body></html>");
+                //response.setContentType("text/html");
+                //out.println("<br><b>Username or Password Error!!!</b>");
+                //out.println("</body></html>");
+                request.setAttribute("message","Username or Password Error!!!");
+                try {
+                    request.getRequestDispatcher("login.jsp").forward(request,response);
+                } catch (ServletException e) {
+                    e.printStackTrace();
+                }
                 //response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Invalid username or password.");
             }
         } catch (SQLException throwables) {

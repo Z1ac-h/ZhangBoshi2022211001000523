@@ -67,9 +67,16 @@
 </head>
 <body>
 
+
 <div id="header-container">
     <%@ include file="header.jsp" %>
 </div>
+
+<%
+    if(!(request.getAttribute("message")==null)){
+        out.println(request.getAttribute("message"));
+    }
+%>
 
 <div id="container1">
     <form id="register" method="post" action="${pageContext.request.contextPath}/login">

@@ -8,10 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
 
 @WebServlet(//name = "RegisterServlet",
         urlPatterns = {"/register"},
@@ -21,6 +18,7 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
+        /*
         String driver=getServletConfig().getServletContext().getInitParameter("driver");
         String url=getServletConfig().getServletContext().getInitParameter("url");
         String username=getServletConfig().getServletContext().getInitParameter("username");
@@ -36,7 +34,12 @@ public class RegisterServlet extends HttpServlet {
         }
         System.out.println("Register-->   ConnectionID"+conn);
 
+         */
+        conn = (Connection) getServletContext().getAttribute("conn");
+
     }
+
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String Username = request.getParameter("Username");
@@ -62,11 +65,12 @@ public class RegisterServlet extends HttpServlet {
             System.out.println("Failed to add");
             throwables.printStackTrace();
         }
+        response.sendRedirect("login.jsp");
 
 
 
 
-
+/*
         List<Map<String, Object>> results = new ArrayList<>();
         int rowIndex = 1;
         try (PreparedStatement ps = conn.prepareStatement("SELECT * FROM Usertable");
@@ -83,10 +87,17 @@ public class RegisterServlet extends HttpServlet {
                 rowMap.put("ID", rowIndex++);
                 results.add(rowMap);
             }
+
+            request.setAttribute("rname",rs);
+            request.setAttribute("resname", results);
+
+            request.getRequestDispatcher("userList.jsp").forward(request,response);
+            System.out.println("I am in RegisterServlet-->doPost()--> after forward()");
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+*/
 
         //PrintWriter writer = response.getWriter();
         //writer.println("<br> Username :"+Username);
@@ -97,8 +108,10 @@ public class RegisterServlet extends HttpServlet {
         //System.out.println("here is OK" + Username);
 
 
+        /*
         response.setContentType("text/html");
         try (PrintWriter writer = response.getWriter()) {
+
             writer.println("<html><head><title>Select SQL result</title></head><body>");
             writer.println("<table border='1'>");
             writer.println("<tr>");
@@ -117,10 +130,15 @@ public class RegisterServlet extends HttpServlet {
                 writer.println("<td>" + row.get("Birthdate") + "</td>");
                 writer.println("</tr>");
             }
+
+
             writer.println("</table>");
             writer.println("</body></html>");
+
         }
-        System.out.println("select is OK");
+
+         */
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
